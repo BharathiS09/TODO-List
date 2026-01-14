@@ -1,0 +1,55 @@
+.app {
+  width: 400px;
+  margin: 50px auto;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.input-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+input {
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
+}
+
+button {
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#list-container {
+  list-style: none;
+  padding: 0;
+}
+
+#list-container li {
+  background: #f2f2f2;
+  margin: 10px 0;
+  padding: 12px;
+  font-size: 18px;
+  position: relative;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+#list-container li.checked {
+  background: #d8ffd8;
+}
+
+#list-container li .delete {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  background: red;
+  color: white;
+  border: none;
+  padding: 5px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+}
