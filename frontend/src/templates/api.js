@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = `${import.meta.env.VITE_API}/api/todos/`;
+const API_URL = `${import.meta.env.VITE_API}api/todos/`;
 
 export const fetchTodos = () => axios.get(API_URL);
 export const createTodo = (todo) => axios.post(API_URL, todo);
