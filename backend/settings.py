@@ -26,7 +26,12 @@ SECRET_KEY = 'django-insecure-l&q(g)q-3tc43alirco2gumhooxs2xv&nq7_hq@xk+n&)1($&4
 DEBUG = False
 
 # Allow localhost and your server’s domain/IP
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'yourdomain.com', 'your.server.ip']
+ALLOWED_HOSTS = [
+    '127.0.0.1',
+    'localhost',
+    'todo-list-jfxv.onrender.com'
+]
+
 
 
 # Application definition
