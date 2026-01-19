@@ -23,7 +23,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-l&q(g)q-3tc43alirco2gumhooxs2xv&nq7_hq@xk+n&)1($&4'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
+
 
 # Allow localhost and your server’s domain/IP
 ALLOWED_HOSTS = [
@@ -65,7 +66,11 @@ MIDDLEWARE = [
 ]
 CORS_ORIGIN_ALLOW_ALL=True
 ROOT_URLCONF = 'backend.urls'
-CORS_ALLOW_ALL_ORIGINS = True   # allows all origins (use carefully in production)
+CORS_ALLOWED_ORIGINS = [
+    "https://todo-list-jfxv.onrender.com",
+    "http://localhost:5173"
+]
+
 
 TEMPLATES = [
     {
