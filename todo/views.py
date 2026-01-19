@@ -1,7 +1,7 @@
-from rest_framework import viewsets
-from .models import Todo
-from .serializer import TodoSerializer
+from rest_framework.views import APIView
+from rest_framework.response import Response
 
-class TodoViewSet(viewsets.ModelViewSet):
-    queryset = Todo.objects.all()
-    serializer_class = TodoSerializer
+class TodoListView(APIView):
+    def get(self, request):
+        # return list of todos
+        return Response({"message": "Success"})
