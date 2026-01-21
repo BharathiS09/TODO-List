@@ -32,13 +32,14 @@ class TodoDetailView(APIView):
     def put(self, request, pk):
         try:
             todo = Todo.objects.get(pk=pk)
-            serializer = TodoSerializer(todo, data=request.data)
+            serializer = TodoSerializer(todo, data=request.data, partial=True)  # <-- partial=True
             if serializer.is_valid():
                 serializer.save()
                 return Response(serializer.data)
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
         except Todo.DoesNotExist:
             return Response({"error": "Todo not found"}, status=status.HTTP_404_NOT_FOUND)
+
 
     def delete(self, request, pk):
         try:
