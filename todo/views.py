@@ -2,7 +2,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from .models import Todo
-from .serializers import TodoSerializer
+from .serializer import TodoSerializer
 
 # List all todos or create a new one
 class TodoListView(APIView):
