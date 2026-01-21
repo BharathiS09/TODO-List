@@ -10,7 +10,6 @@ from .serializer import TodoSerializer
 
 logger = logging.getLogger(__name__)
 
-# List all todos or create a new one
 class TodoListView(APIView):
     def get(self, request):
         todos = Todo.objects.all()
@@ -25,7 +24,6 @@ class TodoListView(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-# Retrieve, update, or delete a single todo
 class TodoDetailView(APIView):
     def get(self, request, pk):
         todo = get_object_or_404(Todo, pk=pk)
@@ -34,7 +32,7 @@ class TodoDetailView(APIView):
 
     def put(self, request, pk):
         todo = get_object_or_404(Todo, pk=pk)
-        serializer = TodoSerializer(todo, data=request.data, partial=True)  # partial=True allows PATCH-like updates
+        serializer = TodoSerializer(todo, data=request.data, partial=True)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)
